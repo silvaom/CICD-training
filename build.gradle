@@ -1,0 +1,60 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+	id 'java'
+	
+}
+
+apply plugin: "jacoco"
+apply plugin: 'checkstyle'
+
+group = 'com.omar'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+/*checkstyle version */
+
+checkstyle {
+    toolVersion = '8.16'
+}
+jacocoTestCoverageVerification{
+	violationRules{
+		rule {
+			limit{
+				minimum = 0.2
+			}
+		}
+	}
+}
+
+jacocoTestReport { 
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'junit:junit:4.12'
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile("org.springframework.boot:spring-boot-starter-web")
+	testCompile("junit:junit")
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testImplementation("io.cucumber:cucumber-java:4.2.6")
+	testImplementation("io.cucumber:cucumber-junit:4.2.6")
+	implementation 'com.hazelcast:hazelcast-all:3.12'
+ }
+
+task acceptanceTest(type: Test) {
+     include '**/acceptance/**'
+     systemProperties System.getProperties()
+}
+
+test {
+     exclude '**/acceptance/**'
+}

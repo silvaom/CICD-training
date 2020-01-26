@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.16">
+<file name="/home/zefhon/Documents/Code/Continuous-Delivery-Docker-Jenkins/Docker-jenkins-project/Chapter1/calculator-mio/calculator/src/main/java/com/omar/calculator/Calculator.java">
+</file>
+<file name="/home/zefhon/Documents/Code/Continuous-Delivery-Docker-Jenkins/Docker-jenkins-project/Chapter1/calculator-mio/calculator/src/main/java/com/omar/calculator/CalculatorApplication.java">
+</file>
+<file name="/home/zefhon/Documents/Code/Continuous-Delivery-Docker-Jenkins/Docker-jenkins-project/Chapter1/calculator-mio/calculator/src/main/java/com/omar/calculator/CalculatorController.java">
+</file>
+<file name="/home/zefhon/Documents/Code/Continuous-Delivery-Docker-Jenkins/Docker-jenkins-project/Chapter1/calculator-mio/calculator/src/main/java/com/omar/calculator/CalculatorTest.java">
+<error line="6" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+</file>
+</checkstyle>
